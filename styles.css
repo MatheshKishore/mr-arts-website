@@ -83,8 +83,10 @@ nav{
 }
 .logo{
   font-family:'Instrument Serif', serif; font-size:22px; letter-spacing:0.02em;
-  display:flex; align-items:center; gap:9px;
+  display:flex; align-items:center; gap:10px;
 }
+.logo-img{height:38px; width:auto; display:block;}
+footer .logo-img{height:32px;}
 .logo .dot{width:7px; height:7px; border-radius:50%; background:var(--brick); animation:pulse 1.8s ease-in-out infinite;}
 @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
 .nav-links{display:flex; gap:38px; align-items:center;}
