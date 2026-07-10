@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services — MR ARTS</title>
+<meta name="description" content="Reels, brand films, event coverage, music videos, photography, editing and content strategy from MR ARTS.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .service-list{border-top:1px solid var(--hairline);}
+  .service-row{
+    display:grid; grid-template-columns:90px 1.1fr 1.4fr; gap:32px;
+    padding:40px 0; border-bottom:1px solid var(--hairline); align-items:start;
+  }
+  @media (max-width:860px){.service-row{grid-template-columns:1fr; gap:12px;}}
+  .service-row .fr{font-family:'IBM Plex Mono', monospace; color:var(--fog); font-size:13px; padding-top:6px;}
+  .service-row h3{font-size:26px; margin-bottom:6px;}
+  .service-row .tag{font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--gold); text-transform:uppercase; letter-spacing:0.06em;}
+  .service-row p{color:var(--fog); font-size:15px; margin-top:12px;}
+
+  .process-band{border-bottom:1px solid var(--hairline);}
+  .process-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:24px;}
+  @media (max-width:860px){.process-grid{grid-template-columns:1fr 1fr;}}
+  .process-step{border-top:1px solid var(--hairline); padding-top:16px;}
+  .process-step .fr{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--fog); display:block; margin-bottom:10px;}
+  .process-step h4{font-size:18px; margin-bottom:8px; font-family:'Instrument Serif',serif;}
+  .process-step p{color:var(--fog); font-size:13.5px;}
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="index.html" class="logo"><span class="dot"></span>MR ARTS</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html" class="active">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html" class="nav-cta">Start a project</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="kicker"><span class="rec-dot"></span><span class="mono">SERVICES</span></div>
+      <h1>Everything from a single reel to a full campaign.</h1>
+      <p class="lede">Every service below runs through the same process: Rahul on story and strategy, Mathesh on camera, edit and colour. Mix and match what your project actually needs.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="service-list">
+        <div class="service-row">
+          <span class="fr">00:01</span>
+          <div>
+            <h3>Reels &amp; Short-Form Content</h3>
+            <span class="tag">Social · Ongoing</span>
+          </div>
+          <p>Instagram Reels, TikToks and YouTube Shorts planned in batches, shot efficiently, and edited to hold attention from the first second. Built for consistent, ongoing posting rather than one-off content.</p>
+        </div>
+        <div class="service-row">
+          <span class="fr">00:02</span>
+          <div>
+            <h3>Promotional Videos &amp; Brand Films</h3>
+            <span class="tag">Brand · Campaign</span>
+          </div>
+          <p>Cinematic promos that introduce a business, launch a product, or support a campaign — built around a real story, not just a features list.</p>
+        </div>
+        <div class="service-row">
+          <span class="fr">00:03</span>
+          <div>
+            <h3>Event Videography &amp; Photography</h3>
+            <span class="tag">Events · On-Location</span>
+          </div>
+          <p>Corporate events, openings and milestones covered on both video and stills, so the moment is documented properly and turned around while it's still current.</p>
+        </div>
+        <div class="service-row">
+          <span class="fr">00:04</span>
+          <div>
+            <h3>Restaurant &amp; Product/Service Highlight Videos</h3>
+            <span class="tag">Food · Retail</span>
+          </div>
+          <p>Content built specifically for restaurants, cafés, barbers and local shops — the kind of video that makes people want to walk in.</p>
+        </div>
+        <div class="service-row">
+          <span class="fr">00:05</span>
+          <div>
+            <h3>Music Videos</h3>
+            <span class="tag">Full Production</span>
+          </div>
+          <p>Concept, direction, cinematography and edit for full music video productions — from treatment through to final colour grade.</p>
+        </div>
+        <div class="service-row">
+          <span class="fr">00:06</span>
+          <div>
+            <h3>Client Testimonial Videos</h3>
+            <span class="tag">Trust · Social Proof</span>
+          </div>
+          <p>Short, honest testimonial pieces that let a happy client do the selling — filmed and edited to feel natural, not scripted.</p>
+        </div>
+        <div class="service-row">
+          <span class="fr">00:07</span>
+          <div>
+            <h3>Poster Design</h3>
+            <span class="tag">Print · Digital</span>
+          </div>
+          <p>Event posters, promotional graphics and print-ready designs to support a launch, show or campaign.</p>
+        </div>
+        <div class="service-row">
+          <span class="fr">00:08</span>
+          <div>
+            <h3>Video Editing &amp; Colour Grading</h3>
+            <span class="tag">Post-Production</span>
+          </div>
+          <p>Standalone editing and grading for footage you've already shot — bring your own raw files, MR ARTS delivers the finished cut.</p>
+        </div>
+        <div class="service-row">
+          <span class="fr">00:09</span>
+          <div>
+            <h3>Creative Concepts, Scripts &amp; Content Strategy</h3>
+            <span class="tag">Planning</span>
+          </div>
+          <p>Content planning, scripting and strategy sessions — for businesses that know they need video but aren't sure where to start.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="process-band">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Process</span>
+        <h2>How a project actually moves.</h2>
+      </div>
+      <div class="process-grid">
+        <div class="process-step"><span class="fr">01</span><h4>Enquiry &amp; Brief</h4><p>Tell us what you need and what it's for — we'll ask the right follow-up questions.</p></div>
+        <div class="process-step"><span class="fr">02</span><h4>Concept &amp; Plan</h4><p>Rahul shapes the story and shot list; you sign off before anything is filmed.</p></div>
+        <div class="process-step"><span class="fr">03</span><h4>Shoot</h4><p>On location or in-studio, shot on the gear the project actually calls for.</p></div>
+        <div class="process-step"><span class="fr">04</span><h4>Edit &amp; Deliver</h4><p>Mathesh edits and grades; you get a finished file ready to post or publish.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner" style="text-align:center;">
+    <div class="wrap">
+      <h2 style="max-width:20ch; margin:0 auto 28px;">Not sure which service fits your project?</h2>
+      <a href="contact.html" class="btn btn-primary">Tell us what you need</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="logo" style="margin-bottom:14px;"><span class="dot"></span>MR ARTS</div>
+        <p style="max-width:34ch; color:var(--fog);">The creative media studio of MK Productions. Cinematic video, photography and storytelling for New Zealand businesses. Made to be remembered.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="tel:+64272599437">+64 27 259 9437</a>
+        <a href="mailto:mkpr0ductions1123@gmail.com">mkpr0ductions1123@gmail.com</a>
+        <a href="https://www.instagram.com/mr.arts___" target="_blank" rel="noopener">@mr.arts___</a>
+        <p style="color:var(--fog); margin-top:6px;">Hamilton, Waikato, NZ</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> MR ARTS — A studio by MK Productions.</span>
+      <span>Made to be remembered.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

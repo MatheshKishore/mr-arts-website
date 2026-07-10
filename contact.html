@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — MR ARTS</title>
+<meta name="description" content="Start a project with MR ARTS — Hamilton, Waikato, New Zealand.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .contact-grid{display:grid; grid-template-columns:0.9fr 1.1fr; gap:64px;}
+  @media (max-width:900px){.contact-grid{grid-template-columns:1fr; gap:36px;}}
+  .contact-detail{margin-bottom:24px; border-top:1px solid var(--hairline); padding-top:16px;}
+  .contact-detail .l{font-family:'IBM Plex Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.08em; color:var(--fog); display:block; margin-bottom:6px;}
+  .contact-detail a, .contact-detail span{font-size:17px;}
+  .contact-detail a:hover{color:var(--gold);}
+
+  form{display:flex; flex-direction:column; gap:20px;}
+  .field label{
+    display:block; font-family:'IBM Plex Mono',monospace; font-size:11px; text-transform:uppercase;
+    letter-spacing:0.06em; color:var(--fog); margin-bottom:10px;
+  }
+  .field input, .field select, .field textarea{
+    width:100%; border:1px solid var(--hairline-strong); background:var(--charcoal);
+    padding:14px 16px; font-family:'Inter', sans-serif; font-size:15px; color:var(--paper);
+    border-radius:var(--radius); resize:vertical;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{outline:none; border-color:var(--gold);}
+  .form-note{font-size:12px; color:var(--fog); margin-top:-6px;}
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="index.html" class="logo"><span class="dot"></span>MR ARTS</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html" class="nav-cta active">Start a project</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <section class="page-hero" style="border-bottom:none; padding-bottom:0;">
+    <div class="wrap">
+      <div class="kicker"><span class="rec-dot"></span><span class="mono">CONTACT</span></div>
+      <h1>Let's talk about your project.</h1>
+      <p class="lede">Send through a few details below, or reach out directly — whichever's easier.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap contact-grid">
+      <div>
+        <div class="contact-detail">
+          <span class="l">Phone</span>
+          <a href="tel:+64272599437">+64 27 259 9437</a>
+        </div>
+        <div class="contact-detail">
+          <span class="l">Email</span>
+          <a href="mailto:mkpr0ductions1123@gmail.com">mkpr0ductions1123@gmail.com</a>
+        </div>
+        <div class="contact-detail">
+          <span class="l">Instagram</span>
+          <a href="https://www.instagram.com/mr.arts___" target="_blank" rel="noopener">@mr.arts___</a>
+        </div>
+        <div class="contact-detail">
+          <span class="l">Location</span>
+          <span>Hamilton, Waikato, New Zealand</span>
+        </div>
+        <div class="contact-detail">
+          <span class="l">Response Time</span>
+          <span>Usually within 1–2 business days</span>
+        </div>
+      </div>
+
+      <form id="contactForm">
+        <div class="field">
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="field">
+          <label for="business">Business / organisation</label>
+          <input type="text" id="business" name="business">
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="field">
+          <label for="projectType">Project type</label>
+          <select id="projectType" name="projectType">
+            <option>Promotional / Brand Film</option>
+            <option>Corporate Event</option>
+            <option>Food / Restaurant Content</option>
+            <option>Music Video</option>
+            <option>Family / Recreational Shoot</option>
+            <option>Poster Design</option>
+            <option>Ongoing Social Content</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="message">Tell us about your project</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send enquiry</button>
+        <p class="form-note">This opens your email app with your message pre-filled. Want it to send straight from the site instead? Swap this for a form service like Formspree once you're ready.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="logo" style="margin-bottom:14px;"><span class="dot"></span>MR ARTS</div>
+        <p style="max-width:34ch; color:var(--fog);">The creative media studio of MK Productions. Cinematic video, photography and storytelling for New Zealand businesses. Made to be remembered.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="tel:+64272599437">+64 27 259 9437</a>
+        <a href="mailto:mkpr0ductions1123@gmail.com">mkpr0ductions1123@gmail.com</a>
+        <a href="https://www.instagram.com/mr.arts___" target="_blank" rel="noopener">@mr.arts___</a>
+        <p style="color:var(--fog); margin-top:6px;">Hamilton, Waikato, NZ</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> MR ARTS — A studio by MK Productions.</span>
+      <span>Made to be remembered.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

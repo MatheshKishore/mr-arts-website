@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing — MR ARTS</title>
+<meta name="description" content="Custom packages and quote-based pricing for video, photography and content projects from MR ARTS.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .pricing-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:2px; background:var(--hairline); border:1px solid var(--hairline);}
+  @media (max-width:900px){.pricing-grid{grid-template-columns:1fr;}}
+  .price-card{background:var(--void); padding:40px 32px; display:flex; flex-direction:column;}
+  .price-card .tag{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--gold); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:18px;}
+  .price-card h3{font-size:26px; margin-bottom:14px;}
+  .price-card .quote{font-family:'Instrument Serif', serif; font-style:italic; font-size:20px; color:var(--fog); margin-bottom:22px;}
+  .price-card ul{margin-bottom:28px; flex:1;}
+  .price-card li{
+    font-size:14px; color:var(--fog); padding:10px 0; border-top:1px solid var(--hairline);
+  }
+  .price-card li:first-child{border-top:none;}
+
+  .faq{border-top:1px solid var(--hairline);}
+  .faq-item{border-bottom:1px solid var(--hairline); padding:26px 0;}
+  .faq-item h4{font-size:18px; margin-bottom:10px; font-family:'Instrument Serif',serif;}
+  .faq-item p{color:var(--fog); font-size:14.5px; max-width:60ch;}
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="index.html" class="logo"><span class="dot"></span>MR ARTS</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="pricing.html" class="active">Pricing</a>
+      <a href="contact.html" class="nav-cta">Start a project</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="kicker"><span class="rec-dot"></span><span class="mono">PRICING</span></div>
+      <h1>Every project is scoped and quoted, not templated.</h1>
+      <p class="lede">Pricing depends on scope — how many deliverables, how many shoot days, whether it's a one-off or ongoing. Here's how the packages generally break down.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="pricing-grid">
+        <div class="price-card">
+          <span class="tag">Content Packages</span>
+          <h3>Ongoing Social Content</h3>
+          <p class="quote">Custom packages available</p>
+          <ul>
+            <li>Monthly Reels &amp; short-form batches</li>
+            <li>Content planning &amp; strategy included</li>
+            <li>Flexible monthly or quarterly plans</li>
+          </ul>
+          <a href="contact.html" class="btn btn-ghost">Get a quote</a>
+        </div>
+        <div class="price-card">
+          <span class="tag">Single Projects</span>
+          <h3>Brand Films &amp; Promos</h3>
+          <p class="quote">Contact us for a quote</p>
+          <ul>
+            <li>Concept, script &amp; shoot day(s)</li>
+            <li>Full edit &amp; colour grade</li>
+            <li>Delivered in your required formats</li>
+          </ul>
+          <a href="contact.html" class="btn btn-ghost">Get a quote</a>
+        </div>
+        <div class="price-card">
+          <span class="tag">Events</span>
+          <h3>Event Coverage</h3>
+          <p class="quote">Priced per event</p>
+          <ul>
+            <li>Video, photography, or both</li>
+            <li>Half-day &amp; full-day options</li>
+            <li>Fast turnaround for time-sensitive content</li>
+          </ul>
+          <a href="contact.html" class="btn btn-ghost">Get a quote</a>
+        </div>
+      </div>
+      <p style="color:var(--fog); font-size:14px; margin-top:28px; max-width:60ch;">
+        Prices aren't listed publicly because scope varies project to project — send through a brief and we'll come back with a clear, honest quote.
+      </p>
+    </div>
+  </section>
+
+  <section class="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Good to Know</span>
+        <h2>Common questions.</h2>
+      </div>
+      <div class="faq-item">
+        <h4>How is a quote worked out?</h4>
+        <p>Based on shoot time, number of deliverables, editing complexity, and turnaround. We'll always confirm scope before starting.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Do you offer ongoing monthly plans?</h4>
+        <p>Yes — for businesses that want a steady stream of social content rather than one-off projects.</p>
+      </div>
+      <div class="faq-item">
+        <h4>What's the typical turnaround?</h4>
+        <p>Depends on the project, but we'll confirm a delivery timeline upfront so there are no surprises.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner" style="text-align:center; border-top:1px solid var(--hairline);">
+    <div class="wrap">
+      <h2 style="max-width:20ch; margin:0 auto 28px;">Send through your brief for a custom quote.</h2>
+      <a href="contact.html" class="btn btn-primary">Get a quote</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="logo" style="margin-bottom:14px;"><span class="dot"></span>MR ARTS</div>
+        <p style="max-width:34ch; color:var(--fog);">The creative media studio of MK Productions. Cinematic video, photography and storytelling for New Zealand businesses. Made to be remembered.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="tel:+64272599437">+64 27 259 9437</a>
+        <a href="mailto:mkpr0ductions1123@gmail.com">mkpr0ductions1123@gmail.com</a>
+        <a href="https://www.instagram.com/mr.arts___" target="_blank" rel="noopener">@mr.arts___</a>
+        <p style="color:var(--fog); margin-top:6px;">Hamilton, Waikato, NZ</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> MR ARTS — A studio by MK Productions.</span>
+      <span>Made to be remembered.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

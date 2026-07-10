@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — MR ARTS</title>
+<meta name="description" content="MR ARTS is the creative media studio of MK Productions, founded by Mathesh Kishore and Rahul Nair in Hamilton, New Zealand.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .mission{border-bottom:1px solid var(--hairline);}
+  .mission blockquote{
+    font-family:'Instrument Serif', serif; font-style:italic; font-size:clamp(26px,4vw,38px);
+    color:var(--paper); max-width:26ch; line-height:1.3;
+  }
+  .mission cite{display:block; margin-top:24px; font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--fog); font-style:normal;}
+
+  .parent-band{border-bottom:1px solid var(--hairline);}
+  .parent-band .row{display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap;}
+  .parent-band h3{font-size:24px;}
+  .parent-band p{color:var(--fog); max-width:56ch; font-size:15px;}
+
+  .founders{border-bottom:1px solid var(--hairline);}
+  .founder-grid{display:grid; grid-template-columns:1fr 1fr; gap:2px; background:var(--hairline); border:1px solid var(--hairline);}
+  @media (max-width:860px){.founder-grid{grid-template-columns:1fr;}}
+  .founder-card{background:var(--void); padding:44px;}
+  .founder-card .num{font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--fog); margin-bottom:22px; display:block;}
+  .founder-card h3{font-size:28px; margin-bottom:4px;}
+  .founder-card .role{font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--gold); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:20px; display:block;}
+  .founder-card p{color:var(--fog); font-size:15px; margin-bottom:14px;}
+
+  .how-we-work{border-bottom:1px solid var(--hairline);}
+  .work-steps{display:grid; grid-template-columns:1fr 1fr; gap:40px;}
+  @media (max-width:860px){.work-steps{grid-template-columns:1fr;}}
+  .work-step{border-top:1px solid var(--hairline); padding-top:20px;}
+  .work-step h4{font-family:'Inter',sans-serif; font-weight:600; font-size:16px; margin-bottom:10px;}
+  .work-step p{color:var(--fog); font-size:14.5px;}
+
+  .values-list{display:grid; grid-template-columns:repeat(4,1fr); gap:24px;}
+  @media (max-width:860px){.values-list{grid-template-columns:1fr 1fr;}}
+  .value-item{border-top:1px solid var(--hairline); padding-top:16px;}
+  .value-item .fr{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--fog); display:block; margin-bottom:8px;}
+  .value-item h4{font-size:18px; font-family:'Instrument Serif',serif;}
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="index.html" class="logo"><span class="dot"></span>MR ARTS</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html" class="nav-cta">Start a project</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="kicker"><span class="rec-dot"></span><span class="mono">ABOUT</span></div>
+      <h1>Real people, real businesses, real moments — made cinematic.</h1>
+      <p class="lede">MR ARTS is the newest company under MK Productions: the commercial creative media side of the brand, built to help local businesses, creators, events and artists show themselves properly.</p>
+    </div>
+  </section>
+
+  <section class="mission">
+    <div class="wrap">
+      <blockquote>
+        "Business content shouldn't feel like an ad. It should feel real, emotional, and worth watching."
+        <cite>— MR ARTS brand philosophy</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="parent-band">
+    <div class="wrap row">
+      <div>
+        <span class="eyebrow">Parent Brand</span>
+        <h3>MR ARTS operates under MK Productions.</h3>
+      </div>
+      <p>MK Productions is the parent studio — home to narrative short films and long-term creative projects. MR ARTS is its own distinct, client-facing brand: the side built specifically for businesses, brands, events and creators who need professional content, not a side project.</p>
+    </div>
+  </section>
+
+  <section class="founders">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Founders</span>
+        <h2>Two disciplines, one output.</h2>
+        <p>Every MR ARTS project runs through both a creative and a technical lens before it's called finished.</p>
+      </div>
+      <div class="founder-grid">
+        <div class="founder-card">
+          <span class="num">FOUNDER — 01</span>
+          <h3>Mathesh Kishore</h3>
+          <span class="role">Technical Director · Cinematographer · Editor · Director</span>
+          <p>Mathesh handles the technical and visual side of MR ARTS — cinematography, camera operation, editing, colour grading, VFX, sound design and direction.</p>
+          <p>His focus is making every frame look premium, emotional and intentional, from the first shot to final delivery.</p>
+        </div>
+        <div class="founder-card">
+          <span class="num">FOUNDER — 02</span>
+          <h3>Rahul Nair</h3>
+          <span class="role">Creative Director · Content Strategist</span>
+          <p>Rahul leads creative planning, writing, direction and content strategy — shaping what a video should say and how the story should flow.</p>
+          <p>He also drives ideas, scripts, captions and the overall brand direction across every platform MR ARTS shows up on.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="how-we-work">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">How We Work</span>
+        <h2>Strategy and execution, in the same room.</h2>
+      </div>
+      <div class="work-steps">
+        <div class="work-step">
+          <h4>Rahul — story, strategy, direction</h4>
+          <p>Content ideas, scripting, planning how a piece should flow and where it needs to land with an audience.</p>
+        </div>
+        <div class="work-step">
+          <h4>Mathesh — visuals, technical execution, delivery</h4>
+          <p>Cinematography, editing, colour grading and the final cinematic look — carried through to a finished, deliverable file.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">What We Believe</span>
+        <h2>Made to be remembered — on purpose.</h2>
+      </div>
+      <div class="values-list">
+        <div class="value-item"><span class="fr">01</span><h4>Real over polished</h4></div>
+        <div class="value-item"><span class="fr">02</span><h4>Story before spec</h4></div>
+        <div class="value-item"><span class="fr">03</span><h4>Useful, not just nice</h4></div>
+        <div class="value-item"><span class="fr">04</span><h4>Built for how it's watched</h4></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner" style="text-align:center; border-top:1px solid var(--hairline);">
+    <div class="wrap">
+      <h2 style="max-width:20ch; margin:0 auto 28px;">Want to work with us on your next project?</h2>
+      <a href="contact.html" class="btn btn-primary">Start a project</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="logo" style="margin-bottom:14px;"><span class="dot"></span>MR ARTS</div>
+        <p style="max-width:34ch; color:var(--fog);">The creative media studio of MK Productions. Cinematic video, photography and storytelling for New Zealand businesses. Made to be remembered.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="tel:+64272599437">+64 27 259 9437</a>
+        <a href="mailto:mkpr0ductions1123@gmail.com">mkpr0ductions1123@gmail.com</a>
+        <a href="https://www.instagram.com/mr.arts___" target="_blank" rel="noopener">@mr.arts___</a>
+        <p style="color:var(--fog); margin-top:6px;">Hamilton, Waikato, NZ</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> MR ARTS — A studio by MK Productions.</span>
+      <span>Made to be remembered.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

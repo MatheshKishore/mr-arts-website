@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MR ARTS — Made to Be Remembered | Cinematic Video &amp; Photography, Hamilton NZ</title>
+<meta name="description" content="MR ARTS is a Hamilton-based creative media studio making cinematic brand films, reels, event coverage and photography for New Zealand businesses. Made to be remembered.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* ---- Home-only styles ---- */
+  .hero{
+    padding:110px 0 100px; border-bottom:1px solid var(--hairline);
+    position:relative; overflow:hidden;
+  }
+  .hero::before{
+    content:''; position:absolute; inset:0; z-index:0;
+    background:
+      radial-gradient(ellipse at 80% 0%, rgba(201,162,75,0.10), transparent 55%),
+      radial-gradient(ellipse at 10% 100%, rgba(178,58,46,0.08), transparent 50%);
+    pointer-events:none;
+  }
+  .hero .wrap{position:relative; z-index:1;}
+  .hero h1{font-size:clamp(44px,7.5vw,84px); max-width:16ch; margin-bottom:10px;}
+  .hero .slogan{
+    font-family:'IBM Plex Mono', monospace; font-size:13px; letter-spacing:0.18em;
+    color:var(--gold); text-transform:uppercase; margin:22px 0 30px;
+  }
+  .hero p.lede{color:var(--fog); font-size:18px; max-width:50ch; margin-bottom:44px;}
+  .hero-actions{display:flex; gap:16px; flex-wrap:wrap; margin-bottom:90px;}
+
+  .reel-frame{
+    aspect-ratio:21/9; border:1px solid var(--hairline-strong); border-radius:var(--radius);
+    background:linear-gradient(135deg, var(--charcoal), var(--void));
+    display:flex; align-items:center; justify-content:center; position:relative;
+  }
+  .reel-frame .play{
+    width:64px; height:64px; border-radius:50%; border:1px solid var(--gold);
+    display:flex; align-items:center; justify-content:center; color:var(--gold);
+    font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.06em;
+  }
+  .reel-frame .corner{position:absolute; font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--fog);}
+  .reel-frame .tl{top:16px; left:20px;} .reel-frame .br{bottom:16px; right:20px;}
+
+  .stats-strip{border-bottom:1px solid var(--hairline); padding:56px 0;}
+  .stats-row{display:grid; grid-template-columns:repeat(4,1fr); gap:24px;}
+  @media (max-width:768px){.stats-row{grid-template-columns:1fr 1fr;}}
+  .stat-block .n{font-family:'Instrument Serif', serif; font-size:40px; color:var(--gold);}
+  .stat-block .l{font-family:'IBM Plex Mono', monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.06em; color:var(--fog); margin-top:6px;}
+
+  .services-teaser{border-bottom:1px solid var(--hairline);}
+  .service-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--hairline); border:1px solid var(--hairline);}
+  @media (max-width:860px){.service-grid{grid-template-columns:1fr;}}
+  .service-tile{background:var(--void); padding:38px 32px;}
+  .service-tile .fr{font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--fog); margin-bottom:16px; display:block;}
+  .service-tile h3{font-size:23px; margin-bottom:12px;}
+  .service-tile p{color:var(--fog); font-size:14.5px;}
+
+  .cat-teaser{border-bottom:1px solid var(--hairline);}
+  .cat-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  @media (max-width:860px){.cat-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:560px){.cat-grid{grid-template-columns:1fr;}}
+  .cat-card{
+    aspect-ratio:4/5; border:1px solid var(--hairline); border-radius:var(--radius);
+    background:linear-gradient(160deg, var(--charcoal), var(--void));
+    display:flex; flex-direction:column; justify-content:flex-end; padding:22px;
+    position:relative; overflow:hidden; transition:border-color .2s;
+  }
+  .cat-card:hover{border-color:var(--gold);}
+  .cat-card .num{font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--fog); position:absolute; top:18px; left:20px;}
+  .cat-card h3{font-size:20px;}
+  .cat-card span{font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--fog); text-transform:uppercase; margin-top:4px; display:block;}
+
+  .about-teaser{display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; border-bottom:1px solid var(--hairline);}
+  @media (max-width:860px){.about-teaser{grid-template-columns:1fr; gap:32px;}}
+  .about-teaser h2{font-size:clamp(28px,4vw,42px); margin-bottom:20px;}
+  .about-teaser p{color:var(--fog); font-size:16px; margin-bottom:16px; max-width:52ch;}
+  .founder-mini{display:flex; gap:20px; margin-top:28px;}
+  .founder-mini .f{border-top:1px solid var(--hairline); padding-top:12px; flex:1;}
+  .founder-mini .f h4{font-size:15px; font-weight:600; font-family:'Inter',sans-serif; margin-bottom:3px;}
+  .founder-mini .f span{font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--fog);}
+
+  .cta-banner{text-align:center;}
+  .cta-banner h2{font-size:clamp(30px,5vw,52px); max-width:18ch; margin:0 auto 28px;}
+  .cta-banner .btn{margin:0 8px;}
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="index.html" class="logo"><span class="dot"></span>MR ARTS</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html" class="nav-cta">Start a project</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="page-hero kicker" style="margin-bottom:0;">
+        <span class="rec-dot"></span>
+        <span class="mono">REC</span>
+        <span class="mono" id="timecode">00:00:00:00</span>
+        <span>— Hamilton, Waikato, New Zealand</span>
+      </div>
+      <h1 style="margin-top:26px;">Cinematic content for businesses, brands and moments worth remembering.</h1>
+      <p class="slogan">Made to be remembered.</p>
+      <p class="lede">MR ARTS is the creative media studio of MK Productions — cinematic videos, photography and storytelling for local businesses, restaurants, events and artists across New Zealand.</p>
+      <div class="hero-actions">
+        <a href="contact.html" class="btn btn-primary">Start a project</a>
+        <a href="portfolio.html" class="btn btn-ghost">View the portfolio</a>
+      </div>
+
+      <div class="reel-frame">
+        <span class="corner tl mono">SHOWREEL_2026.MOV</span>
+        <div class="play">▶ PLAY REEL</div>
+        <span class="corner br mono">16:9 — 4K</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-strip">
+    <div class="wrap stats-row">
+      <div class="stat-block"><div class="n">11+</div><div class="l">Client Projects</div></div>
+      <div class="stat-block"><div class="n">NZ &amp; Int'l</div><div class="l">Work Delivered</div></div>
+      <div class="stat-block"><div class="n">2</div><div class="l">Founders, One Vision</div></div>
+      <div class="stat-block"><div class="n">6</div><div class="l">Content Categories</div></div>
+    </div>
+  </section>
+
+  <!-- SERVICES TEASER -->
+  <section class="services-teaser">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">What We Do</span>
+        <h2>Story-first content, built for how it'll actually be watched.</h2>
+      </div>
+      <div class="service-grid">
+        <div class="service-tile">
+          <span class="fr">01</span>
+          <h3>Reels &amp; Social Content</h3>
+          <p>Short-form video built for Instagram, TikTok and YouTube Shorts — planned, shot and edited to hold attention.</p>
+        </div>
+        <div class="service-tile">
+          <span class="fr">02</span>
+          <h3>Brand Films &amp; Promos</h3>
+          <p>Cinematic promotional videos that show a business, product or launch at its best.</p>
+        </div>
+        <div class="service-tile">
+          <span class="fr">03</span>
+          <h3>Events &amp; Photography</h3>
+          <p>Corporate events, openings and milestones covered on video and stills, turned around fast.</p>
+        </div>
+      </div>
+      <div style="margin-top:36px;">
+        <a href="services.html" class="btn btn-ghost">See all services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORY TEASER -->
+  <section class="cat-teaser">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Selected Work</span>
+        <h2>Six categories. One standard.</h2>
+        <p>From restaurant reels to corporate AV pieces to full music videos — organised the way we actually shoot.</p>
+      </div>
+      <div class="cat-grid">
+        <a href="portfolio.html" class="cat-card"><span class="num">01</span><h3>Promotional</h3><span>Brand &amp; product</span></a>
+        <a href="portfolio.html" class="cat-card"><span class="num">02</span><h3>Corporate Events</h3><span>Openings &amp; milestones</span></a>
+        <a href="portfolio.html" class="cat-card"><span class="num">03</span><h3>Food</h3><span>Restaurants &amp; cafés</span></a>
+        <a href="portfolio.html" class="cat-card"><span class="num">04</span><h3>Music Videos</h3><span>Full production</span></a>
+        <a href="portfolio.html" class="cat-card"><span class="num">05</span><h3>Family &amp; Recreational</h3><span>Personal moments</span></a>
+        <a href="portfolio.html" class="cat-card"><span class="num">06</span><h3>Poster Designs</h3><span>Print &amp; digital</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT TEASER -->
+  <section class="about-teaser wrap" style="padding:120px 32px;">
+    <div>
+      <span class="eyebrow">Who We Are</span>
+      <h2>Two founders. One creative partnership.</h2>
+      <p>MR ARTS is the commercial creative media brand under MK Productions, co-owned by Mathesh Kishore and Rahul Nair. Rahul leads creative direction and content strategy — the story, the script, the plan. Mathesh leads the technical and visual execution — camera, edit, colour, and final delivery.</p>
+      <p>Together, that means every project is both cinematic and considered — content that feels real, not just polished.</p>
+      <a href="about.html" class="btn btn-ghost">More about MR ARTS</a>
+      <div class="founder-mini">
+        <div class="f"><h4>Mathesh Kishore</h4><span>Technical Director · Cinematographer · Editor</span></div>
+        <div class="f"><h4>Rahul Nair</h4><span>Creative Director · Content Strategist</span></div>
+      </div>
+    </div>
+    <div class="reel-frame" style="aspect-ratio:4/5;">
+      <span class="corner tl mono">MR_ARTS.STUDIO</span>
+      <div class="play" style="width:52px;height:52px;font-size:11px;">MR ARTS</div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="wrap">
+      <span class="eyebrow" style="justify-content:center;">Let's Make Something</span>
+      <h2>Ready to make your next project made to be remembered?</h2>
+      <div>
+        <a href="contact.html" class="btn btn-primary">Start a project</a>
+        <a href="pricing.html" class="btn btn-ghost">See packages</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="logo" style="margin-bottom:14px;"><span class="dot"></span>MR ARTS</div>
+        <p style="max-width:34ch; color:var(--fog);">The creative media studio of MK Productions. Cinematic video, photography and storytelling for New Zealand businesses. Made to be remembered.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="tel:+64272599437">+64 27 259 9437</a>
+        <a href="mailto:mkpr0ductions1123@gmail.com">mkpr0ductions1123@gmail.com</a>
+        <a href="https://www.instagram.com/mr.arts___" target="_blank" rel="noopener">@mr.arts___</a>
+        <p style="color:var(--fog); margin-top:6px;">Hamilton, Waikato, NZ</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> MR ARTS — A studio by MK Productions.</span>
+      <span>Made to be remembered.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

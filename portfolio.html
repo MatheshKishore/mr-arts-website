@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio — MR ARTS</title>
+<meta name="description" content="Selected work from MR ARTS across Promotional, Corporate Events, Food, Music Videos, Family & Recreational, and Poster Design.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .filter-bar{
+    display:flex; gap:10px; flex-wrap:wrap; border-bottom:1px solid var(--hairline);
+    padding-bottom:40px; margin-bottom:48px;
+  }
+  .filter-btn{
+    font-family:'IBM Plex Mono', monospace; font-size:12px; text-transform:uppercase; letter-spacing:0.05em;
+    padding:10px 18px; border:1px solid var(--hairline-strong); border-radius:var(--radius);
+    background:transparent; color:var(--fog); cursor:pointer; transition:all .2s;
+  }
+  .filter-btn:hover{color:var(--paper); border-color:var(--paper);}
+  .filter-btn.active{background:var(--gold); color:var(--void); border-color:var(--gold);}
+
+  .portfolio-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:2px; background:var(--hairline); border:1px solid var(--hairline); margin-bottom:24px;}
+  @media (max-width:900px){.portfolio-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:600px){.portfolio-grid{grid-template-columns:1fr;}}
+  .portfolio-card{background:var(--void); display:flex; flex-direction:column;}
+  .portfolio-frame{
+    aspect-ratio:4/5; background:linear-gradient(150deg, var(--charcoal), var(--void));
+    display:flex; align-items:center; justify-content:center; position:relative;
+  }
+  .portfolio-frame .cat-tag{
+    position:absolute; top:14px; left:16px; font-family:'IBM Plex Mono',monospace; font-size:10px;
+    color:var(--gold); text-transform:uppercase; letter-spacing:0.06em;
+  }
+  .portfolio-frame .play{
+    width:46px; height:46px; border-radius:50%; border:1px solid var(--hairline-strong);
+    display:flex; align-items:center; justify-content:center; color:var(--fog); font-size:11px;
+    font-family:'IBM Plex Mono',monospace;
+  }
+  .portfolio-meta{padding:18px 20px; border-top:1px solid var(--hairline);}
+  .portfolio-meta h3{font-size:17px; margin-bottom:4px;}
+  .portfolio-meta span{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--fog); text-transform:uppercase;}
+
+  .privacy-note{
+    border:1px solid var(--hairline-strong); border-radius:var(--radius); padding:20px 24px;
+    color:var(--fog); font-size:13.5px; margin-bottom:64px; max-width:70ch;
+  }
+  .privacy-note strong{color:var(--paper);}
+
+  .testimonials{border-top:1px solid var(--hairline);}
+  .testimonial-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  @media (max-width:860px){.testimonial-grid{grid-template-columns:1fr;}}
+  .testimonial-card blockquote{font-family:'Instrument Serif', serif; font-style:italic; font-size:19px; margin-bottom:18px;}
+  .testimonial-card cite{font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--fog); font-style:normal; text-transform:uppercase;}
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="index.html" class="logo"><span class="dot"></span>MR ARTS</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html" class="active">Portfolio</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html" class="nav-cta">Start a project</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="kicker"><span class="rec-dot"></span><span class="mono">PORTFOLIO</span></div>
+      <h1>Selected work, organised by category.</h1>
+      <p class="lede">11+ client projects across New Zealand and internationally — filtered below by the kind of work it was. Only selected pieces from each project are shown.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All Work</button>
+        <button class="filter-btn" data-filter="promotional">Promotional</button>
+        <button class="filter-btn" data-filter="corporate">Corporate Events</button>
+        <button class="filter-btn" data-filter="food">Food</button>
+        <button class="filter-btn" data-filter="music">Music Videos</button>
+        <button class="filter-btn" data-filter="family">Family &amp; Recreational</button>
+        <button class="filter-btn" data-filter="posters">Poster Designs</button>
+      </div>
+
+      <div class="portfolio-grid">
+        <!-- PROMOTIONAL -->
+        <div class="portfolio-card" data-category="promotional">
+          <div class="portfolio-frame"><span class="cat-tag">Promotional</span><div class="play">▶ VIEW</div></div>
+          <div class="portfolio-meta"><h3>El Vynce — Brand Edit</h3><span>Video Editing · International</span></div>
+        </div>
+        <div class="portfolio-card" data-category="promotional">
+          <div class="portfolio-frame"><span class="cat-tag">Promotional</span><div class="play">▶ VIEW</div></div>
+          <div class="portfolio-meta"><h3>Local Business Promo</h3><span>Brand Film</span></div>
+        </div>
+        <!-- CORPORATE -->
+        <div class="portfolio-card" data-category="corporate">
+          <div class="portfolio-frame"><span class="cat-tag">Corporate Events</span><div class="play">▶ VIEW</div></div>
+          <div class="portfolio-meta"><h3>DG Vaishnav College — AV Piece</h3><span>Event AV · International</span></div>
+        </div>
+        <div class="portfolio-card" data-category="corporate">
+          <div class="portfolio-frame"><span class="cat-tag">Corporate Events</span><div class="play">▶ VIEW</div></div>
+          <div class="portfolio-meta"><h3>Business Opening Coverage</h3><span>Video &amp; Photography</span></div>
+        </div>
+        <!-- FOOD -->
+        <div class="portfolio-card" data-category="food">
+          <div class="portfolio-frame"><span class="cat-tag">Food</span><div class="play">▶ VIEW</div></div>
+          <div class="portfolio-meta"><h3>Restaurant Reel Series</h3><span>Social Content</span></div>
+        </div>
+        <div class="portfolio-card" data-category="food">
+          <div class="portfolio-frame"><span class="cat-tag">Food</span><div class="play">▶ VIEW</div></div>
+          <div class="portfolio-meta"><h3>Café Highlight Video</h3><span>Promotional</span></div>
+        </div>
+        <!-- MUSIC -->
+        <div class="portfolio-card" data-category="music">
+          <div class="portfolio-frame"><span class="cat-tag">Music Video</span><div class="play">▶ VIEW</div></div>
+          <div class="portfolio-meta"><h3>Music Video Production</h3><span>Full Production</span></div>
+        </div>
+        <!-- FAMILY -->
+        <div class="portfolio-card" data-category="family">
+          <div class="portfolio-frame"><span class="cat-tag">Family &amp; Recreational</span><div class="play">▶ VIEW</div></div>
+          <div class="portfolio-meta"><h3>First Birthday — Selected Shots</h3><span>Photography</span></div>
+        </div>
+        <div class="portfolio-card" data-category="family">
+          <div class="portfolio-frame"><span class="cat-tag">Family &amp; Recreational</span><div class="play">▶ VIEW</div></div>
+          <div class="portfolio-meta"><h3>Couple Shoot</h3><span>Photo Gallery</span></div>
+        </div>
+        <!-- POSTERS -->
+        <div class="portfolio-card" data-category="posters">
+          <div class="portfolio-frame"><span class="cat-tag">Poster Design</span><div class="play">▶ VIEW</div></div>
+          <div class="portfolio-meta"><h3>Event Poster</h3><span>Print &amp; Digital</span></div>
+        </div>
+        <div class="portfolio-card" data-category="posters">
+          <div class="portfolio-frame"><span class="cat-tag">Poster Design</span><div class="play">▶ VIEW</div></div>
+          <div class="portfolio-meta"><h3>Promotional Poster Set</h3><span>Print &amp; Digital</span></div>
+        </div>
+      </div>
+
+      <div class="privacy-note">
+        <strong>A note on privacy:</strong> some projects — like family shoots and personal events — only show a few selected images out of respect for client privacy. Full galleries are available on request for prospective clients.
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Client Feedback</span>
+        <h2>What clients have said.</h2>
+        <p>Real feedback from real projects — quotes to be added once finalised.</p>
+      </div>
+      <div class="testimonial-grid">
+        <div class="testimonial-card card">
+          <blockquote>"Testimonial quote to go here."</blockquote>
+          <cite>— Client name, business</cite>
+        </div>
+        <div class="testimonial-card card">
+          <blockquote>"Testimonial quote to go here."</blockquote>
+          <cite>— Client name, business</cite>
+        </div>
+        <div class="testimonial-card card">
+          <blockquote>"Testimonial quote to go here."</blockquote>
+          <cite>— Client name, business</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner" style="text-align:center; border-top:1px solid var(--hairline);">
+    <div class="wrap">
+      <h2 style="max-width:20ch; margin:0 auto 28px;">Like what you see? Let's plan your project.</h2>
+      <a href="contact.html" class="btn btn-primary">Start a project</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="logo" style="margin-bottom:14px;"><span class="dot"></span>MR ARTS</div>
+        <p style="max-width:34ch; color:var(--fog);">The creative media studio of MK Productions. Cinematic video, photography and storytelling for New Zealand businesses. Made to be remembered.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="tel:+64272599437">+64 27 259 9437</a>
+        <a href="mailto:mkpr0ductions1123@gmail.com">mkpr0ductions1123@gmail.com</a>
+        <a href="https://www.instagram.com/mr.arts___" target="_blank" rel="noopener">@mr.arts___</a>
+        <p style="color:var(--fog); margin-top:6px;">Hamilton, Waikato, NZ</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> MR ARTS — A studio by MK Productions.</span>
+      <span>Made to be remembered.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
