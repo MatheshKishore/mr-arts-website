@@ -73,8 +73,7 @@ section{padding:120px 0;}
 /* ---------- header / nav ---------- */
 header{
   position:sticky; top:0; z-index:100;
-  background:rgba(14,13,12,0.82);
-  backdrop-filter:blur(10px);
+  background:var(--void);
   border-bottom:1px solid var(--hairline);
 }
 nav{
