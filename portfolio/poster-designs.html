@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Poster Designs — MR ARTS Portfolio</title>
+<meta name="description" content="Poster and key art design work by MR ARTS — event posters, film posters, and music video artwork.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  .breadcrumb{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:'IBM Plex Mono', monospace; font-size:12px; text-transform:uppercase; letter-spacing:0.06em;
+    color:var(--fog); border:1px solid var(--hairline-strong); padding:9px 16px; border-radius:var(--radius);
+    margin-bottom:28px; transition:border-color .2s, color .2s;
+  }
+  .breadcrumb:hover{border-color:var(--gold); color:var(--gold);}
+  .project-meta{
+    display:flex; gap:24px; margin-top:20px; flex-wrap:wrap;
+    font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--fog); text-transform:uppercase; letter-spacing:0.05em;
+  }
+
+  .poster-grid{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:28px;
+  }
+  @media (max-width:900px){.poster-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:600px){.poster-grid{grid-template-columns:1fr;}}
+  .poster-item{display:flex; flex-direction:column;}
+  .poster-item img{
+    width:100%; height:auto; display:block; border:1px solid var(--hairline);
+    border-radius:var(--radius); background:var(--charcoal);
+  }
+  .poster-caption{margin-top:14px;}
+  .poster-caption h3{font-size:17px; margin-bottom:3px;}
+  .poster-caption span{font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--fog); text-transform:uppercase; letter-spacing:0.05em;}
+  /* Landscape posters look better spanning two columns on wider screens */
+  .poster-item.wide{grid-column:span 2;}
+  @media (max-width:900px){.poster-item.wide{grid-column:span 2;}}
+  @media (max-width:600px){.poster-item.wide{grid-column:span 1;}}
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="../index.html" class="logo"><img src="../assets/logo.png" alt="MR ARTS logo" class="logo-img">MR ARTS</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+      <a href="../services.html">Services</a>
+      <a href="../portfolio.html" class="active">Portfolio</a>
+      <a href="../pricing.html">Pricing</a>
+      <a href="../contact.html" class="nav-cta">Start a project</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <section class="page-hero" style="padding-bottom:56px;">
+    <div class="wrap">
+      <a href="../portfolio.html" class="breadcrumb">← Portfolio</a>
+      <div class="kicker"><span class="rec-dot"></span><span class="mono">POSTER DESIGN</span></div>
+      <h1>Poster Designs</h1>
+      <p class="lede">Key art and poster design for films, music videos, and events — a running collection, updated as new work is finished.</p>
+      <div class="project-meta">
+        <span>7 designs</span>
+        <span>Ongoing collection</span>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="poster-grid">
+
+        <div class="poster-item">
+          <img src="../assets/portfolio/poster-designs/never-sent-portrait.jpg" alt="Never Sent film poster, portrait version">
+          <div class="poster-caption">
+            <h3>Never Sent</h3>
+            <span>Film Poster — Portrait</span>
+          </div>
+        </div>
+
+        <div class="poster-item wide">
+          <img src="../assets/portfolio/poster-designs/never-sent-landscape.jpg" alt="Never Sent film poster, landscape version">
+          <div class="poster-caption">
+            <h3>Never Sent</h3>
+            <span>Film Poster — Landscape</span>
+          </div>
+        </div>
+
+        <div class="poster-item">
+          <img src="../assets/portfolio/poster-designs/mr-mrs-desai-portrait.jpg" alt="Mr & Mrs Desai film poster, portrait version">
+          <div class="poster-caption">
+            <h3>Mr &amp; Mrs Desai</h3>
+            <span>Film Poster — Portrait</span>
+          </div>
+        </div>
+
+        <div class="poster-item wide">
+          <img src="../assets/portfolio/poster-designs/mr-mrs-desai-landscape.jpg" alt="Mr & Mrs Desai film poster, landscape version">
+          <div class="poster-caption">
+            <h3>Mr &amp; Mrs Desai</h3>
+            <span>Film Poster — Landscape</span>
+          </div>
+        </div>
+
+        <div class="poster-item">
+          <img src="../assets/portfolio/poster-designs/sajna-main-poster.jpg" alt="Sajna music video main poster">
+          <div class="poster-caption">
+            <h3>Sajna</h3>
+            <span>Music Video — Main Poster</span>
+          </div>
+        </div>
+
+        <div class="poster-item">
+          <img src="../assets/portfolio/poster-designs/sajna-album-art.jpg" alt="Sajna music video album art">
+          <div class="poster-caption">
+            <h3>Sajna</h3>
+            <span>Music Video — Album Art</span>
+          </div>
+        </div>
+
+        <div class="poster-item">
+          <img src="../assets/portfolio/poster-designs/thimirpp-event-poster.jpg" alt="Thimirpp community event poster">
+          <div class="poster-caption">
+            <h3>Thimirpp</h3>
+            <span>Community Event Poster</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner" style="text-align:center; border-top:1px solid var(--hairline);">
+    <div class="wrap">
+      <h2 style="max-width:20ch; margin:0 auto 28px;">Need poster or key art for your next project?</h2>
+      <a href="../contact.html" class="btn btn-primary">Start a project</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="logo" style="margin-bottom:14px;"><img src="../assets/logo.png" alt="MR ARTS logo" class="logo-img">MR ARTS</div>
+        <p style="max-width:34ch; color:var(--fog);">The creative media studio of MK Productions. Cinematic video, photography and storytelling for New Zealand businesses. Made to be remembered.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="tel:+64272599437">+64 27 259 9437</a>
+        <a href="mailto:mkpr0ductions1123@gmail.com">mkpr0ductions1123@gmail.com</a>
+        <a href="https://www.instagram.com/mr.arts___" target="_blank" rel="noopener">@mr.arts___</a>
+        <p style="color:var(--fog); margin-top:6px;">Hamilton, Waikato, NZ</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <a href="../about.html">About</a>
+        <a href="../services.html">Services</a>
+        <a href="../portfolio.html">Portfolio</a>
+        <a href="../pricing.html">Pricing</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> MR ARTS — A studio by MK Productions.</span>
+      <span>Made to be remembered.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>
