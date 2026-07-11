@@ -134,6 +134,13 @@ footer .logo-img{height:32px;}
   padding:34px;
 }
 
+/* ---------- portfolio tag pills (shared across portfolio pages) ---------- */
+.tag-row{display:flex; flex-wrap:wrap; gap:6px;}
+.tag-pill{
+  font-family:'IBM Plex Mono', monospace; font-size:9.5px; text-transform:uppercase; letter-spacing:0.03em;
+  color:var(--fog); border:1px solid var(--hairline); padding:3px 8px; border-radius:20px;
+}
+
 /* ---------- footer ---------- */
 footer{border-top:1px solid var(--hairline); padding:64px 0 36px;}
 .footer-grid{

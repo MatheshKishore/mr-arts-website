@@ -28,7 +28,8 @@ if (tc) {
   }, 40);
 }
 
-// Portfolio category filter (portfolio.html)
+// Portfolio category filter (portfolio.html) — supports items tagged with
+// more than one category, e.g. data-category="food featured"
 const filterButtons = document.querySelectorAll('.filter-btn');
 const portfolioItems = document.querySelectorAll('.portfolio-card');
 if (filterButtons.length && portfolioItems.length) {
@@ -38,12 +39,28 @@ if (filterButtons.length && portfolioItems.length) {
       btn.classList.add('active');
       const cat = btn.dataset.filter;
       portfolioItems.forEach(item => {
-        const match = cat === 'all' || item.dataset.category === cat;
+        const cats = (item.dataset.category || '').split(' ');
+        const match = cat === 'all' || cats.includes(cat);
         item.style.display = match ? '' : 'none';
       });
     });
   });
 }
+
+// Category cards jump to the project grid with the matching filter applied
+const categoryCards = document.querySelectorAll('.category-card[data-filter]');
+categoryCards.forEach(card => {
+  card.addEventListener('click', (e) => {
+    const filter = card.dataset.filter;
+    const targetBtn = document.querySelector(`.filter-btn[data-filter="${filter}"]`);
+    if (targetBtn) {
+      e.preventDefault();
+      targetBtn.click();
+      document.getElementById('work-grid').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    // if no matching filter button (e.g. card links to its own page), let the link proceed normally
+  });
+});
 
 // Contact form -> mailto fallback
 const contactForm = document.getElementById('contactForm');

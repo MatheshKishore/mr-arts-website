@@ -4,12 +4,54 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portfolio — MR ARTS</title>
-<meta name="description" content="Selected work from MR ARTS across Promotional, Corporate Events, Food, Music Videos, Family & Recreational, and Poster Design.">
+<meta name="description" content="Selected work from MR ARTS across Brand & Promotional, Food & Hospitality, Corporate, Events, Music Videos, Photography, and Poster Design.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <style>
+  /* ---- Category cards ---- */
+  .category-grid{
+    display:grid; grid-template-columns:repeat(4, 1fr); gap:20px; margin-bottom:90px;
+  }
+  @media (max-width:1100px){.category-grid{grid-template-columns:repeat(2, 1fr);}}
+  @media (max-width:560px){.category-grid{grid-template-columns:1fr;}}
+  .category-card{
+    position:relative; aspect-ratio:4/5; border:1px solid var(--hairline); border-radius:var(--radius);
+    overflow:hidden; display:block; text-decoration:none; cursor:pointer;
+    background:linear-gradient(150deg, var(--charcoal), var(--void));
+    transition:border-color .25s;
+  }
+  .category-card:hover{border-color:var(--gold);}
+  .category-card .cc-img{
+    position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+    opacity:0.55; transition:opacity .3s, transform .5s ease;
+  }
+  .category-card:hover .cc-img{opacity:0.75; transform:scale(1.04);}
+  .category-card .cc-overlay{
+    position:absolute; inset:0;
+    background:linear-gradient(to top, rgba(14,13,12,0.96) 10%, rgba(14,13,12,0.55) 55%, rgba(14,13,12,0.35) 100%);
+  }
+  .category-card .cc-num{
+    position:absolute; top:18px; left:20px; font-family:'IBM Plex Mono', monospace;
+    font-size:11px; color:var(--gold); letter-spacing:0.05em;
+  }
+  .category-card .cc-count{
+    position:absolute; top:18px; right:20px; font-family:'IBM Plex Mono', monospace;
+    font-size:10px; color:var(--fog); text-transform:uppercase; letter-spacing:0.05em;
+    border:1px solid var(--hairline-strong); padding:4px 9px; border-radius:20px;
+  }
+  .category-card .cc-body{position:absolute; left:20px; right:20px; bottom:18px;}
+  .category-card h3{font-size:21px; margin-bottom:6px; line-height:1.1;}
+  .category-card .cc-sub{font-size:12.5px; color:var(--fog); margin-bottom:14px; display:block;}
+  .category-card .cc-cta{
+    font-family:'IBM Plex Mono', monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.06em;
+    color:var(--paper); display:inline-flex; align-items:center; gap:6px;
+    opacity:0; transform:translateY(4px); transition:opacity .25s, transform .25s;
+  }
+  .category-card:hover .cc-cta{opacity:1; transform:translateY(0);}
+
+  /* ---- Filter bar ---- */
   .filter-bar{
     display:flex; gap:10px; flex-wrap:wrap; border-bottom:1px solid var(--hairline);
     padding-bottom:40px; margin-bottom:48px;
@@ -22,6 +64,7 @@
   .filter-btn:hover{color:var(--paper); border-color:var(--paper);}
   .filter-btn.active{background:var(--gold); color:var(--void); border-color:var(--gold);}
 
+  /* ---- Project grid ---- */
   .portfolio-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:2px; background:var(--hairline); border:1px solid var(--hairline); margin-bottom:24px;}
   @media (max-width:900px){.portfolio-grid{grid-template-columns:1fr 1fr;}}
   @media (max-width:600px){.portfolio-grid{grid-template-columns:1fr;}}
@@ -32,7 +75,12 @@
   }
   .portfolio-frame .cat-tag{
     position:absolute; top:14px; left:16px; font-family:'IBM Plex Mono',monospace; font-size:10px;
-    color:var(--gold); text-transform:uppercase; letter-spacing:0.06em;
+    color:var(--gold); text-transform:uppercase; letter-spacing:0.06em; z-index:2;
+  }
+  .portfolio-frame .featured-tag{
+    position:absolute; top:14px; right:16px; font-family:'IBM Plex Mono',monospace; font-size:9px;
+    color:var(--void); background:var(--gold); text-transform:uppercase; letter-spacing:0.05em;
+    padding:3px 8px; border-radius:20px; z-index:2;
   }
   .portfolio-frame .play{
     width:46px; height:46px; border-radius:50%; border:1px solid var(--hairline-strong);
@@ -41,7 +89,12 @@
   }
   .portfolio-meta{padding:18px 20px; border-top:1px solid var(--hairline);}
   .portfolio-meta h3{font-size:17px; margin-bottom:4px;}
-  .portfolio-meta span{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--fog); text-transform:uppercase;}
+  .portfolio-meta .ptype{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--fog); text-transform:uppercase; display:block; margin-bottom:10px;}
+  .tag-row{display:flex; flex-wrap:wrap; gap:6px;}
+  .tag-pill{
+    font-family:'IBM Plex Mono', monospace; font-size:9.5px; text-transform:uppercase; letter-spacing:0.03em;
+    color:var(--fog); border:1px solid var(--hairline); padding:3px 8px; border-radius:20px;
+  }
 
   .privacy-note{
     border:1px solid var(--hairline-strong); border-radius:var(--radius); padding:20px 24px;
@@ -79,82 +132,239 @@
     <div class="wrap">
       <div class="kicker"><span class="rec-dot"></span><span class="mono">PORTFOLIO</span></div>
       <h1>Selected work, organised by category.</h1>
-      <p class="lede">11+ client projects across New Zealand and internationally — filtered below by the kind of work it was. Only selected pieces from each project are shown.</p>
+      <p class="lede">11+ client projects across New Zealand and internationally — explore by category below, or filter the full grid. Only selected pieces from each project are shown.</p>
     </div>
   </section>
 
   <section>
     <div class="wrap">
 
-      <div class="filter-bar">
+      <div class="section-head">
+        <span class="eyebrow">Explore By Category</span>
+        <h2>One standard across every story.</h2>
+        <p>From restaurant reels and business promos to music videos, events, photography, and poster design — our work is organised the way we create: with purpose, detail, and feeling.</p>
+      </div>
+
+      <div class="category-grid">
+
+        <a class="category-card" data-filter="featured">
+          <div class="cc-overlay"></div>
+          <span class="cc-num">01</span>
+          <span class="cc-count">3 projects</span>
+          <div class="cc-body">
+            <h3>Featured Work</h3>
+            <span class="cc-sub">Selected films, campaigns &amp; creative pieces</span>
+            <span class="cc-cta">View Work →</span>
+          </div>
+        </a>
+
+        <a class="category-card" data-filter="brand">
+          <div class="cc-overlay"></div>
+          <span class="cc-num">02</span>
+          <span class="cc-count">2 projects</span>
+          <div class="cc-body">
+            <h3>Brand &amp; Promotional</h3>
+            <span class="cc-sub">Business, product &amp; campaign films</span>
+            <span class="cc-cta">View Work →</span>
+          </div>
+        </a>
+
+        <a class="category-card" data-filter="food">
+          <img class="cc-img" src="assets/portfolio/nawab-sahib/poster.jpg" alt="Food & Hospitality category thumbnail">
+          <div class="cc-overlay"></div>
+          <span class="cc-num">03</span>
+          <span class="cc-count">2 projects</span>
+          <div class="cc-body">
+            <h3>Food &amp; Hospitality</h3>
+            <span class="cc-sub">Restaurants, cafés &amp; kitchen stories</span>
+            <span class="cc-cta">View Work →</span>
+          </div>
+        </a>
+
+        <a class="category-card" data-filter="corporate">
+          <div class="cc-overlay"></div>
+          <span class="cc-num">04</span>
+          <span class="cc-count">1 project</span>
+          <div class="cc-body">
+            <h3>Corporate &amp; Professional</h3>
+            <span class="cc-sub">Testimonials, finance &amp; workplace content</span>
+            <span class="cc-cta">View Work →</span>
+          </div>
+        </a>
+
+        <a class="category-card" data-filter="events">
+          <div class="cc-overlay"></div>
+          <span class="cc-num">05</span>
+          <span class="cc-count">2 projects</span>
+          <div class="cc-body">
+            <h3>Events &amp; Community</h3>
+            <span class="cc-sub">Live moments, launches &amp; community stories</span>
+            <span class="cc-cta">View Work →</span>
+          </div>
+        </a>
+
+        <a class="category-card" data-filter="music">
+          <div class="cc-overlay"></div>
+          <span class="cc-num">06</span>
+          <span class="cc-count">1 project</span>
+          <div class="cc-body">
+            <h3>Music Videos &amp; Creative Films</h3>
+            <span class="cc-sub">Artist visuals &amp; creative productions</span>
+            <span class="cc-cta">View Work →</span>
+          </div>
+        </a>
+
+        <a class="category-card" data-filter="photography">
+          <div class="cc-overlay"></div>
+          <span class="cc-num">07</span>
+          <span class="cc-count">2 projects</span>
+          <div class="cc-body">
+            <h3>Photography &amp; Personal Stories</h3>
+            <span class="cc-sub">Family, couples &amp; special moments</span>
+            <span class="cc-cta">View Work →</span>
+          </div>
+        </a>
+
+        <a href="portfolio/poster-designs.html" class="category-card">
+          <img class="cc-img" src="assets/portfolio/poster-designs/sajna-main-poster.jpg" alt="Poster Design & Key Art category thumbnail">
+          <div class="cc-overlay"></div>
+          <span class="cc-num">08</span>
+          <span class="cc-count">7 designs</span>
+          <div class="cc-body">
+            <h3>Poster Design &amp; Key Art</h3>
+            <span class="cc-sub">Film, event &amp; campaign artwork</span>
+            <span class="cc-cta">View Work →</span>
+          </div>
+        </a>
+
+      </div>
+
+      <div class="filter-bar" id="work-grid">
         <button class="filter-btn active" data-filter="all">All Work</button>
-        <button class="filter-btn" data-filter="promotional">Promotional</button>
-        <button class="filter-btn" data-filter="corporate">Corporate Events</button>
-        <button class="filter-btn" data-filter="food">Food</button>
+        <button class="filter-btn" data-filter="featured">Featured</button>
+        <button class="filter-btn" data-filter="brand">Brand &amp; Promo</button>
+        <button class="filter-btn" data-filter="food">Food &amp; Hospitality</button>
+        <button class="filter-btn" data-filter="corporate">Corporate</button>
+        <button class="filter-btn" data-filter="events">Events</button>
         <button class="filter-btn" data-filter="music">Music Videos</button>
-        <button class="filter-btn" data-filter="family">Family &amp; Recreational</button>
-        <button class="filter-btn" data-filter="posters">Poster Designs</button>
+        <button class="filter-btn" data-filter="photography">Photography</button>
       </div>
 
       <div class="portfolio-grid">
-        <!-- PROMOTIONAL -->
-        <div class="portfolio-card" data-category="promotional">
-          <div class="portfolio-frame"><span class="cat-tag">Promotional</span><div class="play">▶ VIEW</div></div>
-          <div class="portfolio-meta"><h3>El Vynce — Brand Edit</h3><span>Video Editing · International</span></div>
-        </div>
-        <div class="portfolio-card" data-category="promotional">
-          <div class="portfolio-frame"><span class="cat-tag">Promotional</span><div class="play">▶ VIEW</div></div>
-          <div class="portfolio-meta"><h3>Local Business Promo</h3><span>Brand Film</span></div>
-        </div>
-        <!-- CORPORATE -->
-        <div class="portfolio-card" data-category="corporate">
-          <div class="portfolio-frame"><span class="cat-tag">Corporate Events</span><div class="play">▶ VIEW</div></div>
-          <div class="portfolio-meta"><h3>DG Vaishnav College — AV Piece</h3><span>Event AV · International</span></div>
-        </div>
-        <div class="portfolio-card" data-category="corporate">
-          <div class="portfolio-frame"><span class="cat-tag">Corporate Events</span><div class="play">▶ VIEW</div></div>
-          <div class="portfolio-meta"><h3>Business Opening Coverage</h3><span>Video &amp; Photography</span></div>
-        </div>
-        <!-- FOOD -->
-        <a href="portfolio/nawab-sahib.html" class="portfolio-card" data-category="food" style="text-decoration:none;">
+
+        <a href="portfolio/nawab-sahib.html" class="portfolio-card" data-category="food featured" style="text-decoration:none;">
           <div class="portfolio-frame" style="background:none;">
             <img src="assets/portfolio/nawab-sahib/poster.jpg" alt="Nawab Sahib restaurant reel thumbnail" style="width:100%; height:100%; object-fit:cover; position:absolute; inset:0;">
-            <span class="cat-tag" style="z-index:2;">Food</span>
+            <span class="cat-tag" style="z-index:2;">Food &amp; Hospitality</span>
+            <span class="featured-tag">Featured</span>
             <div class="play" style="z-index:2;">▶ VIEW</div>
           </div>
-          <div class="portfolio-meta"><h3>Nawab Sahib</h3><span>Restaurant Reel</span></div>
+          <div class="portfolio-meta">
+            <h3>Nawab Sahib</h3>
+            <span class="ptype">Restaurant Reel</span>
+            <div class="tag-row"><span class="tag-pill">NZ Local Project</span><span class="tag-pill">Full Production</span></div>
+          </div>
         </a>
+
+        <div class="portfolio-card" data-category="brand featured">
+          <div class="portfolio-frame"><span class="cat-tag">Brand &amp; Promotional</span><span class="featured-tag">Featured</span><div class="play">▶ VIEW</div></div>
+          <div class="portfolio-meta">
+            <h3>El Vynce — Brand Edit</h3>
+            <span class="ptype">Video Editing · Fashion Brand</span>
+            <div class="tag-row"><span class="tag-pill">International Project</span><span class="tag-pill">Video Editing</span></div>
+          </div>
+        </div>
+
+        <div class="portfolio-card" data-category="events">
+          <div class="portfolio-frame"><span class="cat-tag">Events &amp; Community</span><div class="play">▶ VIEW</div></div>
+          <div class="portfolio-meta">
+            <h3>DG Vaishnav College — AV Piece</h3>
+            <span class="ptype">Special AV · Event Film</span>
+            <div class="tag-row"><span class="tag-pill">International Project</span><span class="tag-pill">Special AV</span></div>
+          </div>
+        </div>
+
+        <div class="portfolio-card" data-category="brand">
+          <div class="portfolio-frame"><span class="cat-tag">Brand &amp; Promotional</span><div class="play">▶ VIEW</div></div>
+          <div class="portfolio-meta">
+            <h3>Local Business Promo</h3>
+            <span class="ptype">Brand Film</span>
+            <div class="tag-row"><span class="tag-pill">NZ Local Project</span></div>
+          </div>
+        </div>
+
+        <div class="portfolio-card" data-category="events">
+          <div class="portfolio-frame"><span class="cat-tag">Events &amp; Community</span><div class="play">▶ VIEW</div></div>
+          <div class="portfolio-meta">
+            <h3>Business Opening Coverage</h3>
+            <span class="ptype">Video &amp; Photography</span>
+            <div class="tag-row"><span class="tag-pill">NZ Local Project</span><span class="tag-pill">Full Production</span></div>
+          </div>
+        </div>
+
         <div class="portfolio-card" data-category="food">
-          <div class="portfolio-frame"><span class="cat-tag">Food</span><div class="play">▶ VIEW</div></div>
-          <div class="portfolio-meta"><h3>Café Highlight Video</h3><span>Promotional</span></div>
+          <div class="portfolio-frame"><span class="cat-tag">Food &amp; Hospitality</span><div class="play">▶ VIEW</div></div>
+          <div class="portfolio-meta">
+            <h3>Café Highlight Video</h3>
+            <span class="ptype">Promotional</span>
+            <div class="tag-row"><span class="tag-pill">NZ Local Project</span><span class="tag-pill">Video Editing</span></div>
+          </div>
         </div>
-        <!-- MUSIC -->
+
+        <div class="portfolio-card" data-category="corporate">
+          <div class="portfolio-frame"><span class="cat-tag">Corporate &amp; Professional</span><div class="play">▶ VIEW</div></div>
+          <div class="portfolio-meta">
+            <h3>Local Business Testimonial</h3>
+            <span class="ptype">Testimonial Video</span>
+            <div class="tag-row"><span class="tag-pill">NZ Local Project</span><span class="tag-pill">Video Editing</span></div>
+          </div>
+        </div>
+
         <div class="portfolio-card" data-category="music">
-          <div class="portfolio-frame"><span class="cat-tag">Music Video</span><div class="play">▶ VIEW</div></div>
-          <div class="portfolio-meta"><h3>Music Video Production</h3><span>Full Production</span></div>
+          <div class="portfolio-frame"><span class="cat-tag">Music Videos &amp; Creative Films</span><div class="play">▶ VIEW</div></div>
+          <div class="portfolio-meta">
+            <h3>Music Video Production</h3>
+            <span class="ptype">Full Production</span>
+            <div class="tag-row"><span class="tag-pill">Full Production</span></div>
+          </div>
         </div>
-        <!-- FAMILY -->
-        <div class="portfolio-card" data-category="family">
-          <div class="portfolio-frame"><span class="cat-tag">Family &amp; Recreational</span><div class="play">▶ VIEW</div></div>
-          <div class="portfolio-meta"><h3>First Birthday — Selected Shots</h3><span>Photography</span></div>
+
+        <div class="portfolio-card" data-category="photography">
+          <div class="portfolio-frame"><span class="cat-tag">Photography</span><div class="play">▶ VIEW</div></div>
+          <div class="portfolio-meta">
+            <h3>First Birthday — Selected Shots</h3>
+            <span class="ptype">Photography</span>
+            <div class="tag-row"><span class="tag-pill">Selected Frames Only</span></div>
+          </div>
         </div>
-        <div class="portfolio-card" data-category="family">
-          <div class="portfolio-frame"><span class="cat-tag">Family &amp; Recreational</span><div class="play">▶ VIEW</div></div>
-          <div class="portfolio-meta"><h3>Couple Shoot</h3><span>Photo Gallery</span></div>
+
+        <div class="portfolio-card" data-category="photography">
+          <div class="portfolio-frame"><span class="cat-tag">Photography</span><div class="play">▶ VIEW</div></div>
+          <div class="portfolio-meta">
+            <h3>Couple Shoot</h3>
+            <span class="ptype">Photo Gallery</span>
+            <div class="tag-row"><span class="tag-pill">Client Series</span></div>
+          </div>
         </div>
-        <!-- POSTERS -->
-        <a href="portfolio/poster-designs.html" class="portfolio-card" data-category="posters" style="text-decoration:none;">
+
+        <a href="portfolio/poster-designs.html" class="portfolio-card" data-category="posters featured" style="text-decoration:none;">
           <div class="portfolio-frame" style="background:none;">
             <img src="assets/portfolio/poster-designs/sajna-main-poster.jpg" alt="Poster design collection thumbnail" style="width:100%; height:100%; object-fit:cover; position:absolute; inset:0;">
-            <span class="cat-tag" style="z-index:2;">Poster Design</span>
+            <span class="cat-tag" style="z-index:2;">Poster Design &amp; Key Art</span>
+            <span class="featured-tag">Featured</span>
             <div class="play" style="z-index:2;">▶ VIEW</div>
           </div>
-          <div class="portfolio-meta"><h3>Poster Designs</h3><span>7 designs — Film, Music &amp; Events</span></div>
+          <div class="portfolio-meta">
+            <h3>Poster Designs</h3>
+            <span class="ptype">7 designs — Film, Music &amp; Events</span>
+            <div class="tag-row"><span class="tag-pill">Client Series</span></div>
+          </div>
         </a>
+
       </div>
 
       <div class="privacy-note">
-        <strong>A note on privacy:</strong> some projects — like family shoots and personal events — only show a few selected images out of respect for client privacy. Full galleries are available on request for prospective clients.
+        <strong>A note on privacy:</strong> some family, personal, and private client projects are shown only through selected frames or approved previews. Full galleries are available on request for prospective clients.
       </div>
     </div>
   </section>
