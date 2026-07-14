@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sajna — MR ARTS Portfolio</title>
+<meta name="description" content="Sajna — a music video of love and longing, produced by MR ARTS.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  .breadcrumb{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:'IBM Plex Mono', monospace; font-size:12px; text-transform:uppercase; letter-spacing:0.06em;
+    color:var(--fog); border:1px solid var(--hairline-strong); padding:9px 16px; border-radius:var(--radius);
+    margin-bottom:28px; transition:border-color .2s, color .2s;
+  }
+  .breadcrumb:hover{border-color:var(--gold); color:var(--gold);}
+  .project-meta{
+    display:flex; gap:24px; margin-top:20px; flex-wrap:wrap;
+    font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--fog); text-transform:uppercase; letter-spacing:0.05em;
+  }
+
+  .video-embed-wrap{
+    max-width:900px; margin:0 auto; padding:0 32px 90px;
+  }
+  .video-embed{
+    position:relative; width:100%; aspect-ratio:16/9;
+    border:1px solid var(--hairline-strong); border-radius:8px; overflow:hidden; background:var(--charcoal);
+  }
+  .video-embed iframe{position:absolute; inset:0; width:100%; height:100%; border:0;}
+
+  .credits-band{border-top:1px solid var(--hairline); border-bottom:1px solid var(--hairline);}
+  .credits-grid{
+    display:grid; grid-template-columns:repeat(4, 1fr); gap:28px;
+  }
+  @media (max-width:860px){.credits-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:500px){.credits-grid{grid-template-columns:1fr;}}
+  .credit-item .l{font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:var(--fog); text-transform:uppercase; letter-spacing:0.06em; display:block; margin-bottom:6px;}
+  .credit-item .n{font-family:'Instrument Serif', serif; font-style:italic; font-size:19px;}
+
+  .stills-grid{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:20px;
+  }
+  @media (max-width:860px){.stills-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:560px){.stills-grid{grid-template-columns:1fr;}}
+  .stills-grid img{width:100%; height:auto; display:block; border:1px solid var(--hairline); border-radius:var(--radius);}
+  .stills-placeholder{
+    border:1px dashed var(--hairline-strong); border-radius:var(--radius);
+    padding:56px 24px; text-align:center; color:var(--fog); font-size:13.5px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="../index.html" class="logo"><img src="../assets/logo.png" alt="MR ARTS logo" class="logo-img">MR ARTS</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+      <a href="../services.html">Services</a>
+      <a href="../portfolio.html" class="active">Portfolio</a>
+      <a href="../pricing.html">Pricing</a>
+      <a href="../contact.html" class="nav-cta">Start a project</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <section class="page-hero" style="padding-bottom:56px; text-align:center;">
+    <div class="wrap">
+      <a href="../portfolio.html" class="breadcrumb">← Portfolio</a>
+      <div class="kicker" style="justify-content:center;"><span class="rec-dot"></span><span class="mono">MUSIC VIDEOS &amp; CREATIVE FILMS</span></div>
+      <h1 style="margin:0 auto;">Sajna</h1>
+      <p class="lede" style="margin:22px auto 0;">A music video of love and longing — full concept, direction, and production.</p>
+      <div class="project-meta" style="justify-content:center;">
+        <span>Music Video</span>
+        <span>Full Production</span>
+      </div>
+      <div class="tag-row" style="justify-content:center; margin-top:16px;">
+        <span class="tag-pill">Full Production</span>
+        <span class="tag-pill">Featured</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="video-embed-wrap">
+    <div class="video-embed">
+      <iframe src="https://www.youtube.com/embed/hE2V5LVjiqk" title="Sajna — Music Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <section class="credits-band">
+    <div class="wrap">
+      <div class="credits-grid">
+        <div class="credit-item"><span class="l">Performed By</span><span class="n">Shail M</span></div>
+        <div class="credit-item"><span class="l">Music</span><span class="n">Jordan Nandpuri</span></div>
+        <div class="credit-item"><span class="l">Lyrics</span><span class="n">Perri Talwar</span></div>
+        <div class="credit-item"><span class="l">Featuring</span><span class="n">Shaiz Kay</span></div>
+        <div class="credit-item"><span class="l">Directed By</span><span class="n">Mathesh &amp; Rahul</span></div>
+        <div class="credit-item"><span class="l">Assistant Creative</span><span class="n">Sandeep Nayyer</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Behind The Scenes</span>
+        <h2>Stills from the shoot.</h2>
+      </div>
+      <div class="stills-grid">
+        <div class="stills-placeholder">Stills coming soon — send them over and they'll drop in right here.</div>
+        <div class="stills-placeholder">Stills coming soon — send them over and they'll drop in right here.</div>
+        <div class="stills-placeholder">Stills coming soon — send them over and they'll drop in right here.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner" style="text-align:center; border-top:1px solid var(--hairline); padding-top:90px;">
+    <div class="wrap">
+      <h2 style="max-width:20ch; margin:0 auto 28px;">Need a music video for your next release?</h2>
+      <a href="../contact.html" class="btn btn-primary">Start a project</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="logo" style="margin-bottom:14px;"><img src="../assets/logo.png" alt="MR ARTS logo" class="logo-img">MR ARTS</div>
+        <p style="max-width:34ch; color:var(--fog);">The creative media studio of MK Productions. Cinematic video, photography and storytelling for New Zealand businesses. Made to be remembered.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="tel:+64272599437">+64 27 259 9437</a>
+        <a href="mailto:mkpr0ductions1123@gmail.com">mkpr0ductions1123@gmail.com</a>
+        <a href="https://www.instagram.com/mr.arts___" target="_blank" rel="noopener">@mr.arts___</a>
+        <p style="color:var(--fog); margin-top:6px;">Hamilton, Waikato, NZ</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <a href="../about.html">About</a>
+        <a href="../services.html">Services</a>
+        <a href="../portfolio.html">Portfolio</a>
+        <a href="../pricing.html">Pricing</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> MR ARTS — A studio by MK Productions.</span>
+      <span>Made to be remembered.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>
