@@ -69,9 +69,18 @@
     position:relative; overflow:hidden; transition:border-color .2s;
   }
   .cat-card:hover{border-color:var(--gold);}
-  .cat-card .num{font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--fog); position:absolute; top:18px; left:20px;}
-  .cat-card h3{font-size:20px;}
-  .cat-card span{font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--fog); text-transform:uppercase; margin-top:4px; display:block;}
+  .cat-card .cc-img{
+    position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+    opacity:0.5; transition:opacity .3s, transform .5s ease;
+  }
+  .cat-card:hover .cc-img{opacity:0.7; transform:scale(1.04);}
+  .cat-card .cc-overlay{
+    position:absolute; inset:0;
+    background:linear-gradient(to top, rgba(14,13,12,0.96) 15%, rgba(14,13,12,0.5) 60%, rgba(14,13,12,0.3) 100%);
+  }
+  .cat-card .num{font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--fog); position:absolute; top:18px; left:20px; z-index:2;}
+  .cat-card h3{font-size:20px; position:relative; z-index:2;}
+  .cat-card span:not(.cc-img):not(.cc-overlay){font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--fog); text-transform:uppercase; margin-top:4px; display:block; position:relative; z-index:2;}
 
   .about-teaser{display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; border-bottom:1px solid var(--hairline);}
   @media (max-width:860px){.about-teaser{grid-template-columns:1fr; gap:32px;}}
@@ -180,14 +189,46 @@
         <p>From restaurant reels and business promos to music videos, events, photography, and poster design — our work is organised the way we create: with purpose, detail, and feeling.</p>
       </div>
       <div class="cat-grid">
-        <a href="portfolio.html" class="cat-card"><span class="num">01</span><h3>Featured Work</h3><span>Selected films &amp; campaigns</span></a>
-        <a href="portfolio.html" class="cat-card"><span class="num">02</span><h3>Brand &amp; Promotional</h3><span>Business &amp; campaign films</span></a>
-        <a href="portfolio.html" class="cat-card"><span class="num">03</span><h3>Food &amp; Hospitality</h3><span>Restaurants &amp; cafés</span></a>
-        <a href="portfolio.html" class="cat-card"><span class="num">04</span><h3>Corporate &amp; Professional</h3><span>Testimonials &amp; workplace</span></a>
-        <a href="portfolio.html" class="cat-card"><span class="num">05</span><h3>Events &amp; Community</h3><span>Launches &amp; live moments</span></a>
-        <a href="portfolio.html" class="cat-card"><span class="num">06</span><h3>Music Videos &amp; Creative Films</h3><span>Artist visuals</span></a>
-        <a href="portfolio.html" class="cat-card"><span class="num">07</span><h3>Photography &amp; Personal Stories</h3><span>Family &amp; couples</span></a>
-        <a href="portfolio/poster-designs.html" class="cat-card"><span class="num">08</span><h3>Poster Design &amp; Key Art</h3><span>Film &amp; campaign artwork</span></a>
+        <a href="portfolio.html" class="cat-card">
+          <img class="cc-img" src="assets/portfolio/poster-designs/never-sent-landscape.jpg" alt="Featured Work">
+          <div class="cc-overlay"></div>
+          <span class="num">01</span><h3>Featured Work</h3><span>Selected films &amp; campaigns</span>
+        </a>
+        <a href="portfolio.html" class="cat-card">
+          <img class="cc-img" src="assets/portfolio/poster-designs/mr-mrs-desai-landscape.jpg" alt="Brand & Promotional">
+          <div class="cc-overlay"></div>
+          <span class="num">02</span><h3>Brand &amp; Promotional</h3><span>Business &amp; campaign films</span>
+        </a>
+        <a href="portfolio/nawab-sahib.html" class="cat-card">
+          <img class="cc-img" src="assets/portfolio/nawab-sahib/poster.jpg" alt="Food & Hospitality">
+          <div class="cc-overlay"></div>
+          <span class="num">03</span><h3>Food &amp; Hospitality</h3><span>Restaurants &amp; cafés</span>
+        </a>
+        <a href="portfolio.html" class="cat-card">
+          <img class="cc-img" src="assets/portfolio/poster-designs/never-sent-portrait.jpg" alt="Corporate & Professional">
+          <div class="cc-overlay"></div>
+          <span class="num">04</span><h3>Corporate &amp; Professional</h3><span>Testimonials &amp; workplace</span>
+        </a>
+        <a href="portfolio.html" class="cat-card">
+          <img class="cc-img" src="assets/portfolio/poster-designs/sajna-album-art.jpg" alt="Events & Community">
+          <div class="cc-overlay"></div>
+          <span class="num">05</span><h3>Events &amp; Community</h3><span>Launches &amp; live moments</span>
+        </a>
+        <a href="portfolio/sajna.html" class="cat-card">
+          <img class="cc-img" src="assets/portfolio/poster-designs/sajna-main-poster.jpg" alt="Music Videos & Creative Films">
+          <div class="cc-overlay"></div>
+          <span class="num">06</span><h3>Music Videos &amp; Creative Films</h3><span>Artist visuals</span>
+        </a>
+        <a href="portfolio.html" class="cat-card">
+          <img class="cc-img" src="assets/portfolio/poster-designs/mr-mrs-desai-portrait.jpg" alt="Photography & Personal Stories">
+          <div class="cc-overlay"></div>
+          <span class="num">07</span><h3>Photography &amp; Personal Stories</h3><span>Family &amp; couples</span>
+        </a>
+        <a href="portfolio/poster-designs.html" class="cat-card">
+          <img class="cc-img" src="assets/portfolio/poster-designs/thimirpp-event-poster.jpg" alt="Poster Design & Key Art">
+          <div class="cc-overlay"></div>
+          <span class="num">08</span><h3>Poster Design &amp; Key Art</h3><span>Film &amp; campaign artwork</span>
+        </a>
       </div>
     </div>
   </section>

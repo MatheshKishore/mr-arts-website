@@ -47,21 +47,6 @@ if (filterButtons.length && portfolioItems.length) {
   });
 }
 
-// Category cards jump to the project grid with the matching filter applied
-const categoryCards = document.querySelectorAll('.category-card[data-filter]');
-categoryCards.forEach(card => {
-  card.addEventListener('click', (e) => {
-    const filter = card.dataset.filter;
-    const targetBtn = document.querySelector(`.filter-btn[data-filter="${filter}"]`);
-    if (targetBtn) {
-      e.preventDefault();
-      targetBtn.click();
-      document.getElementById('work-grid').scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-    // if no matching filter button (e.g. card links to its own page), let the link proceed normally
-  });
-});
-
 // Contact form -> mailto fallback
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
